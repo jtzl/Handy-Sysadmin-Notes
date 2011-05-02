@@ -1,0 +1,3 @@
+To remove a particular type of data from a particular type of log, say getting mail entries out of syslog, use the following convention in syslog-ng.conf
+
+filter f_syslog { not facility(mail) }
