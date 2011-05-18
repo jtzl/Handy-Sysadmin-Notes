@@ -1,0 +1,37 @@
+### In addition to the conf file below, the following object files are important:
+## 1.  /lib/modules/2.6.35-28-generic/updates/dkms/wacom.ko
+## 2.  /lib/modules/2.6.35-28-generic/kernel/drivers/input/tablet/wacom.ko
+
+
+# File:  /usr/share/X11/xorg.conf.d/50-wacom.conf
+Section "InputClass"
+        Identifier "Wacom class"
+# WALTOP needs a patched kernel driver, that isn't in mainline lk yet,
+# so for now just let it fall through and be picked up by evdev instead.
+#       MatchProduct "Wacom|WALTOP|WACOM"
+        MatchProduct "Wacom|WACOM"
+        MatchDevicePath "/dev/input/event*"
+        Driver "wacom"
+EndSection
+
+Section "InputClass"
+        Identifier "Wacom serial class"
+        MatchProduct "Serial Wacom Tablet"
+        Driver "wacom"
+EndSection
+
+Section "InputClass"
+        Identifier "Wacom serial class identifiers"
+        MatchProduct "WACf|FUJ02e5|FUJ02e7"
+        Driver "wacom"
+EndSection
+
+
+# N-Trig Duosense Electromagnetic Digitizer
+Section "InputClass"
+        Identifier "Wacom N-Trig class"
+        MatchProduct "HID 1b96:0001|N-Trig Pen"
+        MatchDevicePath "/dev/input/event*"
+        Driver "wacom"
+        Option "Button2" "3"
+EndSection
