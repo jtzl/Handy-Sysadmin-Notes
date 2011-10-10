@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ftp -inv ftp.server.tld << EOT
+user ftpusername ftpuserpass
+cd remote_dir
+bin
+lcd /local/dir
+put file.ext
+bye
+EOT
