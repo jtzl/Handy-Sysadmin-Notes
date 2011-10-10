@@ -1,0 +1,16 @@
+helpful imagemagick and ffmpeg commands
+
+convert -gravity north -crop 80x85% +repage -gravity south -crop 62x90% +repage -gravity center -resize 18% -delay 8 -loop 0 *.jpg animated.gif
+
+
+#watermarker
+for i in {0001..0071}; do
+convert ${i}.png -pointsize 60 -draw "gravity south fill white text 0,12 '@watermarktext' fill black text 1,11 '@watermarktext'" wm${i}.png
+done
+
+
+
+convert -resize 40% -delay 10 -loop 0 wm*.png animated.gif
+
+
+ffmpeg -r 12 -i img%03d.jpg -vcodec mjpeg -s 430x322 video.avi 
