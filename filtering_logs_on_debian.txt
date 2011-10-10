@@ -1,3 +1,29 @@
-To remove a particular type of data from a particular type of log, say getting mail entries out of syslog, use the following convention in syslog-ng.conf
+In general, syslog-ng has 3 components in the conf file:  destinations, filters, and log definitions.
 
+the destination is where you associate names with files:
+
+# puppet log destination
+destination df_puppet { file("/var/log/puppet.log"); };
+
+If you're using system logging facilities, you can remove a particular type of data from a particular type of log, say getting mail entries out of syslog, using the following convention in syslog-ng.conf
+
+# filter to remove anything that uses mail log facility from syslog
 filter f_syslog { not facility(mail) }
+
+syslog-ng filters also support regex so you can do things like:
+
+# filter to omit puppetd entries from daemon.log
+filter f_daemon { facility(daemon) and not match ("puppetd"); };
+
+The above entry removes puppet-associated data from the daemon log, but we need to catch those entries elsewhere like so:
+
+# filter to collect puppetd entries from daemon facility
+filter f_puppet { facility(daemon) and match("puppetd"); };
+
+Now we've got a puppet filter going...but what about the log definition?
+
+log {
+        source(s_all);
+        filter(f_puppet);
+        destination(df_puppet);
+};
