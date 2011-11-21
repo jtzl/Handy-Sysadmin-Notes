@@ -1,0 +1,3 @@
+restarting vnc:
+	launchctl stop com.apple.ScreenSharing.server
+	launchctl start com.apple.ScreenSharing.server
