@@ -1,2 +1,0 @@
-get remote git repo url: 
-	git remote show origin
