@@ -1,0 +1,7 @@
+marvell env vars:
+
+booting off usb
+x_bootcmd_kernel=fatload usb 1:1 0x6400000 uImage
+x_bootargs_root=root=/dev/sdc2 rootdelay=10
+
+booting off internal sd
