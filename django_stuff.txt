@@ -1,0 +1,6 @@
+superuser password change
+>>> from django.contrib.auth.models import User
+>>> users = User.objects.all()
+>>> u = users[0]
+>>> u.set_password('password');
+>>> u.save()
