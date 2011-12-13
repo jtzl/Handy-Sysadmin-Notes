@@ -1,2 +1,5 @@
 yum list installed (it's so easy; hard to believe i forget it so often)
 rpm -qa
+
+remove package dry run:
+	rpm -ev {package} --test
