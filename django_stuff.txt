@@ -1,4 +1,5 @@
-superuser password change
+#superuser password change
+####  ./manage.py shell
 >>> from django.contrib.auth.models import User
 >>> users = User.objects.all()
 >>> u = users[0]
