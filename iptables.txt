@@ -1,0 +1,3 @@
+delete individual iptables rule from nat table
+
+iptables -t nat -D PREROUTING x
