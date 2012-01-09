@@ -1,0 +1,9 @@
+scripting gmail labels in mutt:
+
+	to delete emails older than 2 weeks in inbox, for instance, do:
+
+		mutt -F mutt.cfg -e 'set folder=/dev/null; set delete=yes; push "<delete-pattern>~d >2w<enter><quit>"'
+
+	to delete mail from another folder, say, "foo," do:
+
+		mutt -F mutt.cfg -e 'set delete=yes; push "<change-folder>=foo<enter><delete-pattern>~d >2w<enter><quit>"'
