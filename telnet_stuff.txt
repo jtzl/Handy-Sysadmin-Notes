@@ -1,0 +1,13 @@
+##################################
+Sending mail from telnet:
+---------------------------------
+HELO hostname port
+MAIL FROM: from@domain.tld
+RCPT TO: to@domain.tld
+DATA
+Subject: blah blah
+blah blah
+.
+QUIT
+
+############################
