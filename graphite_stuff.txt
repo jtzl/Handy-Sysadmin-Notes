@@ -1,1 +1,3 @@
 examine whisper data:  whisper-fetch.py
+
+whisper-resize.py /path/to/stat.wsp unit:units
