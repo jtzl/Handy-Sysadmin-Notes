@@ -1,0 +1,11 @@
+curl cookies file format  (thanks to ed martin, circa 2005: http://curl.haxx.se/mail/archive-2005-03/0099.html)
+7 tab-separated fields:
+- domain
+- tailmatch
+- path
+- secure
+- expires
+- name
+- value 
+
+please note, it's important this file be tab-separated.  tab.  separated.
