@@ -1,1 +1,4 @@
 after cloning debian (ubuntu?) vm, delete /etc/udev/rules.d/70-persistent-net.rules and reboot to get new mac
+
+if you can't reboot a client vm after coming back from sleep or whatever on osx, do..
+sudo /Library/StartupItems/VirtualBox/VirtualBox restart
