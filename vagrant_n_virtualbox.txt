@@ -1,0 +1,15 @@
+Vagrant:
+
+>The following SSH command responded with a non-zero exit status.
+>Vagrant assumes that this means the command failed!
+>
+>service hostname start
+
+^- that means you have an underscore in your hostname in Vagrantfile
+
+
+Vbox:
+!!!! after cloning debian (ubuntu?) vm, delete /etc/udev/rules.d/70-persistent-net.rules and reboot to get new mac !!!!
+
+if you can't reboot a client vm after coming back from sleep or whatever on osx, do..
+sudo /Library/StartupItems/VirtualBox/VirtualBox restart
