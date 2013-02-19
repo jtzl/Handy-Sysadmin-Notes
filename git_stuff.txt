@@ -1,2 +1,6 @@
 get remote git repo url: 
 	git remote show origin
+
+
+delete remote branch:
+	git push origin :<branch name>

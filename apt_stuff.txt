@@ -1,0 +1,3 @@
+restore original config files:
+
+sudo dpkg --force-confmiss -i /var/cache/apt/archives/<PACKAGE NAME>*.deb
