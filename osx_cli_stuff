@@ -8,3 +8,13 @@ networksetup -getdnsservers Wi-Fi
 networksetup listallnetworkservices
 
 scutils --dns
+
+
+relaunch dock:
+	killall -KILL Dock
+	
+         finder:
+	killall -KILL Finder
+
+         desperate times...
+        killall -KILL SystemUIServer
