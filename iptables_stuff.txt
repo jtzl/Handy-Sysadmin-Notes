@@ -1,3 +1,8 @@
 delete individual iptables rule from nat table
 
 iptables -t nat -D PREROUTING x
+
+
+log outbound packets (for instance)
+
+iptables -A OUTPUT -p tcp --dport 80 -j LOG --log-prefix "http log: "
