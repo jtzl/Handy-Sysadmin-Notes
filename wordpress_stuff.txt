@@ -1,0 +1,20 @@
+
+When porting Wordpress, if permalinks can change the htaccess file but links still do not work, look at your apache config.
+
+
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+
+        DocumentRoot /var/www
+
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /var/www/blog>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All       ### HERE- CHANGE None to All
+                Order allow,deny
+                allow from all
+        </Directory>
+
